@@ -4,6 +4,8 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>RPS Game</title>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Josefin+Sans&display=swap" rel="stylesheet" />
 		<link href="assets/css/style.css" type="text/css" rel="stylesheet" />
 	</head>
 	<body>
@@ -12,26 +14,29 @@
 		</header>
 		<div class="content">
 			<div class="player__box comp">
-				<div class="score">12</div>
+				<div class="score">0</div>
 				<div class="move-chosen">
 					<img src="assets/game-paper.png" alt="Rock" />
 				</div>
 			</div>
+			<div class="game__decision">
+				<p>VS</p>
+			</div>
 			<div class="player__box player">
-				<div class="score">10</div>
+				<div class="score">0</div>
 				<div class="move-chosen">
 					<img src="assets/game-scissor.png" alt="Rock" />
 				</div>
 				<div class="choose__move">
 					<div class="moves">
-						<img src="assets/game-paper.png" alt="Rock" />
-						<img src="assets/game-scissor.png" alt="Rock" />
-						<img src="assets/game-rock.png" alt="Rock" />
+						<img src="assets/game-paper.png" alt="paper" />
+						<img src="assets/game-scissor.png" alt="scissor" />
+						<img src="assets/game-rock.png" alt="rock" />
 					</div>
 				</div>
 			</div>
 		</div>
-		<footer><p>Copyright &copy; Piyush Upadhyay 2020</p></footer>
+
 		<script src="assets/js/script.js"></script>
 	</body>
 </html>

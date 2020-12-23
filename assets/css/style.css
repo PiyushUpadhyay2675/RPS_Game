@@ -10,15 +10,17 @@ body {
 	height: 100%;
 	display: grid;
 	grid-template-columns: 1fr;
-	grid-template-rows: repeat(4, 1fr);
+	grid-template-rows: repeat(5, 1fr);
 	grid-template-areas:
 		"header"
 		"content"
 		"content"
+		"content"
 		"content";
+	font-family: "Bebas Neue", cursive;
 }
 body {
-	min-height: 92vh;
+	min-height: 98vh;
 }
 /*
 ***************************************************
@@ -43,6 +45,7 @@ header {
 	text-align: center;
 	color: #fddb27ff;
 	transform: skew(14deg);
+	font-family: "Josefin Sans", sans-serif;
 }
 
 /*
@@ -61,8 +64,10 @@ Content -> Start
 	grid-area: content;
 	display: grid;
 	text-align: center;
-	grid-template-rows: repeat(2, 1fr);
-	grid-row-gap: 3em;
+	grid-template-columns: 1;
+	grid-template-rows: 1fr 10px 1fr;
+	grid-row-gap: 1em;
+	grid-template-areas: "computer" "decision" "player";
 }
 .player__box {
 	width: 70%;
@@ -71,12 +76,16 @@ Content -> Start
 	backdrop-filter: blur(10px);
 	border-radius: 10px;
 	overflow: hidden;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+	display: block;
 }
 .player__box img {
 	width: 40%;
+}
+.comp {
+	grid-area: computer;
+}
+.player {
+	grid-area: player;
 }
 .score {
 	display: flex;
@@ -84,7 +93,7 @@ Content -> Start
 	align-items: center;
 	width: 100%;
 	color: #fff;
-	font-size: 2em;
+	font-size: 1.5em;
 	height: 20%;
 	background-color: #00b1d2ff;
 }
@@ -104,7 +113,19 @@ Content -> Start
 	justify-content: space-evenly;
 }
 .choose__move img {
-	width: 27%;
+	width: 23%;
+	transition: width 0.3s;
+}
+.choose__move img:hover {
+	width: 24%;
+}
+.game__decision {
+	grid-area: decision;
+	/* bottom: 10px; */
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	letter-spacing: 2px;
 }
 /*
 ***************************************************
@@ -117,14 +138,6 @@ Content -> End
 Footer -> Start
 ***************************************************
 */
-footer {
-	grid-area: footer;
-	position: absolute;
-	bottom: 10px;
-	display: flex;
-	justify-content: center;
-	width: 100%;
-}
 /*
 ***************************************************
 Footer -> End
