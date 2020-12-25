@@ -49,7 +49,7 @@ const readScore = () => {
 	document.querySelectorAll(".score").forEach((element, index) => {
 		element.innerHTML = "";
 		let markup;
-		index === 1 ? (markup = `${state.player.score}`) : (markup = `${state.comp.score}`);
+		index === 1 ? (markup = `<p>${state.player.score}</p>`) : (markup = `<p>${state.comp.score}</p>`);
 		element.insertAdjacentHTML("afterbegin", markup);
 	});
 };
@@ -67,11 +67,13 @@ const updateScore = (player, comp) => {
 };
 
 const updateView = (player, comp) => {
-	computer_img = document.querySelector(".comp img");
-	player_img = document.querySelector(".player img");
-	computer_img.setAttribute("src", `assets/game-${comp}.png`);
-	player_img.setAttribute("src", `assets/game-${player}.png`);
-	console.log;
+	all_img = document.querySelectorAll(".move-chosen");
+	all_img.forEach((el, index) => {
+		el.innerHTML = "";
+		let markup;
+		index === 1 ? (markup = `<img src="assets/game-${player}.png" alt="Rock" />`) : (markup = `<img src="assets/game-${comp}.png" alt="Rock" />`);
+		el.insertAdjacentHTML("afterbegin", markup);
+	});
 };
 
 // Controller to handle player and Computer Moves
